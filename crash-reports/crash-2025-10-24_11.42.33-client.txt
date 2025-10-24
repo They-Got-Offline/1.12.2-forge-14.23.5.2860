@@ -1,0 +1,149 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  Controllable (controllable-0.11.2-1.12.2.jar)
+  Backpacked (backpacked-1.4.3-1.12.2.jar)
+  TransformLoader (DynamicSurroundings-1.12.2-3.6.3.jar)
+  ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+  LoadingPlugin (Bloodmoon-MC1.12.2-1.5.3.jar)
+Contact their authors BEFORE contacting forge
+
+// There are four lights!
+
+Time: 10/24/25 11:42 AM
+Description: Unexpected error
+
+java.lang.NoSuchMethodError: com.mrcrayfish.controllable.client.Controller.getState()Lcom/studiohartman/jamepad/ControllerState;
+	at com.mrcrayfish.guns.client.ControllerEvents.onRender(ControllerEvents.java:174)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_159_ControllerEvents_onRender_RenderTickEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onRenderTickStart(FMLCommonHandler.java:355)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:1117)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:398)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.mrcrayfish.guns.client.ControllerEvents.onRender(ControllerEvents.java:174)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_159_ControllerEvents_onRender_RenderTickEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['JulianSorto'/2556, l='MpServer', x=171.50, y=79.00, z=47.50]]
+	Chunk stats: MultiplayerChunkCache: 0, 0
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (171,64,44), Chunk: (at 11,4,12 in 10,2; contains blocks 160,0,32 to 175,255,47), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 8 game time, 8 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 2 total; [EntityLatchedRenderer['unknown'/2822, l='MpServer', x=8.50, y=65.00, z=8.50], EntityPlayerSP['JulianSorto'/2556, l='MpServer', x=171.50, y=79.00, z=47.50]]
+	Retry entities: 1 total; [EntityLatchedRenderer['unknown'/2822, l='MpServer', x=8.50, y=65.00, z=8.50]]
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:532)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2741)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:427)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 654732424 bytes (624 MB) / 1040187392 bytes (992 MB) up to 2147483648 bytes (2048 MB)
+	JVM Flags: 8 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx2G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2860 Optifine OptiFine_1.12.2_HD_U_E3 21 mods loaded, 21 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID               | Version        | Source                                        | Signature                                |
+	|:------ |:---------------- |:-------------- |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft        | 1.12.2         | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp              | 9.42           | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML              | 8.0.99.99      | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge            | 14.23.5.2860   | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | controllable     | 0.11.2         | controllable-0.11.2-1.12.2.jar                | None                                     |
+	| LCHIJA | backpacked       | 1.4.2          | backpacked-1.4.3-1.12.2.jar                   | None                                     |
+	| LCHIJA | obfuscate        | 0.4.2          | minecraft.jar                                 | None                                     |
+	| LCHIJA | biomesoplenty    | 7.0.1.2444     | BiomesOPlenty-1.12.2-7.0.1.2444-universal.jar | None                                     |
+	| LCHIJA | bloodmoon        | 1.5.3          | Bloodmoon-MC1.12.2-1.5.3.jar                  | d72e0dd57935b3e9476212aea0c0df352dd76291 |
+	| LCHIJA | extendedrenderer | v1.0           | coroutil-1.12.1-1.2.37.jar                    | None                                     |
+	| LCHIJA | coroutil         | 1.12.1-1.2.37  | coroutil-1.12.1-1.2.37.jar                    | None                                     |
+	| LCHIJA | configmod        | v1.0           | coroutil-1.12.1-1.2.37.jar                    | None                                     |
+	| LCHIJA | orelib           | 3.6.0.1        | OreLib-1.12.2-3.6.0.1.jar                     | 7a2128d395ad96ceb9d9030fbd41d035b435753a |
+	| LCHIJA | dsurround        | @VERSION@      | DynamicSurroundings-1.12.2-3.6.3.jar          | None                                     |
+	| LCHIJA | cgm              | 0.15.3         | guns-0.15.3-1.12.2.jar                        | None                                     |
+	| LCHIJA | ichunutil        | 7.2.2          | iChunUtil-1.12.2-7.2.2.jar                    | 4db5c2bd1b556f252a5b8b54b256d381b2a0a6b8 |
+	| LCHIJA | jei              | 4.16.1.1013    | jei_1.12.2-4.16.1.1013.jar                    | None                                     |
+	| LCHIJA | mobamputation    | 7.0.0          | MobAmputation-1.12.2-7.0.1.jar                | None                                     |
+	| LCHIJA | mobdismemberment | 7.0.0          | MobDismemberment-1.12.2-7.0.0.jar             | None                                     |
+	| LCHIJA | mobsunscreen     | @version@      | mobsunscreen-1.12.2-3.1.6.jar                 | None                                     |
+	| LCHIJA | zombieawareness  | 1.12.1-1.11.16 | zombieawareness-1.12.1-1.11.16.jar            | None                                     |
+
+	Loaded coremods (and transformers): 
+Controllable (controllable-0.11.2-1.12.2.jar)
+  
+Backpacked (backpacked-1.4.3-1.12.2.jar)
+  com.mrcrayfish.backpacked.asm.BackpackedTransformer
+TransformLoader (DynamicSurroundings-1.12.2-3.6.3.jar)
+  
+ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+  com.mrcrayfish.obfuscate.asm.ObfuscateTransformer
+LoadingPlugin (Bloodmoon-MC1.12.2-1.5.3.jar)
+  lumien.bloodmoon.asm.ClassTransformer
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.6.0 Compatibility Profile Context 25.10.20.01.250617' Renderer: 'AMD Radeon Graphics'
+	Launched Version: 1.12.2-forge-14.23.5.2860
+	LWJGL: 2.9.4
+	OpenGL: AMD Radeon Graphics GL version 4.6.0 Compatibility Profile Context 25.10.20.01.250617, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: No
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 16x AMD Ryzen Z1 Extreme 
+	OptiFine Version: OptiFine_1.12.2_HD_U_E3
+	OptiFine Build: 20181210-121000
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: (internal)
+	OpenGlVersion: 4.6.0 Compatibility Profile Context 25.10.20.01.250617
+	OpenGlRenderer: AMD Radeon Graphics
+	OpenGlVendor: ATI Technologies Inc.
+	CpuCount: 16
